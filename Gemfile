@@ -27,6 +27,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Custom Gems
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+gem 'better_errors'
 gem 'bootstrap', '~> 4.4.1'
 gem 'bootstrap-will_paginate', '~> 1.0'
 gem 'carrierwave', '~> 2.1'

@@ -4,12 +4,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :username
       t.string :email
+      t.string :profile_image
       t.string :password_digest
-      t.string :remember_digest
-      t.string :twitter
-      t.string :facebook
-      t.string :avatar
-      t.boolean :admin, default: false
 
       t.timestamps
     end
