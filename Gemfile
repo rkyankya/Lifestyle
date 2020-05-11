@@ -20,10 +20,25 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
+# Custom Gems
+gem 'jquery-rails', '~> 4.4'
+gem 'hirb'
+gem 'faker'
+gem 'fog-aws', '~> 3.6', '>= 3.6.3'
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+gem 'carrierwave', '~> 2.1'
+gem 'simple_form'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+gem 'will_paginate', '~> 3.3'
+gem 'bootstrap-will_paginate', '~> 1.0'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
+gem 'simple_sessions'
+gem 'bootstrap', '~> 4.4.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -50,5 +65,9 @@ group :test do
   gem 'webdrivers'
 end
 
+group :production do
+  gem 'pg'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
