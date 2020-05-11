@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: [:new, :create]
-  before_action :already_logged_in, only: [:new, :create]
+  before_action :logged_in_user, except: %i[new create]
+  before_action :already_logged_in, only: %i[new create]
 
   def index
     @users = User.all
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-
   end
 
   def show
