@@ -39,7 +39,6 @@ class User < ApplicationRecord
 
   def authenticate?(remember_token)
     return false if remember_digest.nil?
-
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
@@ -79,13 +78,14 @@ class User < ApplicationRecord
   end
 
   def save_avatar
-    avatar = gravatar_for(email)
-    update_column(:avatar, avatar)
+    avatar = gravatar_for(self.email)
+    self.update_column(:avatar, avatar)
   end
 
   def gravatar_for(email, size: 80)
-    gravatar_id = Digest::MD5.hexdigest(email.downcase)
+    gravatar_id = Digest::MD5::hexdigest(email.downcase)
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     gravatar_url
   end
+
 end
